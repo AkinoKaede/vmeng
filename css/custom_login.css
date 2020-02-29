@@ -1,0 +1,30 @@
+body{
+	font-family: "Microsoft YaHei", Helvetica, Arial, Lucida Grande, Tahoma, sans-serif;
+	background: url(../img/login.jpg);
+	width:100%;
+	height:100%;
+}
+.login h1 a {
+	background:url(../img/logo.png) no-repeat;
+	background-size: 220px 50px;
+	width: 220px;
+	height: 50px;
+	padding: 0;
+	margin: 0 auto 1em;
+}
+.login form, .login .message {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 2px;
+	border: 1px solid #fff;
+}
+.login label {
+	color: #000;
+	font-weight: bold;
+}
+.login .message {
+	color: #000;
+}
+#backtoblog a, #nav a {
+	color: #fff !important;
+}

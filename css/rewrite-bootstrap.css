@@ -1,0 +1,129 @@
+/* 重定义Bootstrap START */
+@media (min-width: 768px){
+    .navbar {
+      border-radius: 0;
+    }
+    .navbar-default .navbar-nav>li>a {
+      padding-top: 0; 
+      padding-bottom: 0; 
+      line-height: 40px;
+      color: #6f788b;
+      font-weight: 600;
+    }
+    .nav>li>a {
+      padding: 0px 25px;
+    }
+}
+.affix{
+    width: 100%;
+    top: 0;
+}
+.navbar{
+    margin: 0;
+    min-height: 40px;
+    box-shadow: none;
+    z-index: 3;
+    opacity: .9;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #6f788b;
+    font-weight: normal;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: #f2f2f2;
+    color: #394e58;
+}
+.navbar-brand{
+    height: auto;
+    padding: 0 0 0 15px;
+}
+.navbar-default .navbar-toggle{
+    margin-top:0;
+    margin-bottom: 0;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #2196f3;
+}
+.thumbnail{
+    padding: 5px 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 10px 0 rgba(160,160,160,.1);
+}
+.panel{
+    box-shadow: none;
+}
+.panel-default{
+    border:1px solid #efefef;
+	box-shadow:0 5px 10px 0 rgba(160,160,160,.1);
+}
+.pagination>li>a, .pagination>li>span{
+    color:#2196f3;
+    border: 1px solid #efefef;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #fff;
+    background-color: #2196f3;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+    background-color: #2196f3;
+    border-color: #efefef;
+}
+.pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus{
+    border-color: #efefef;
+}
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  -webkit-box-shadow: inset 0 -2px 0 #2196f3;
+  box-shadow: inset 0 -2px 0 #2196f3;
+}
+.btn {
+    border: 1px;
+    box-shadow: none;
+}
+.btn-blue{
+    color: #6f788b;
+    background-color: #fff;
+    border:1px solid #efefef;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus,
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #2196f3;
+  border-color: #efefef;
+}
+.list-group-item{
+  padding: 10px;
+  border: 1px solid #efefef;
+}
+.label-default{
+  background-color: #efefef;
+  color: #a6a6a6;
+}
+.well{
+    background-color: #2196f3;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 3px;
+}
+/* 重定义Bootstrap END */
