@@ -28,5 +28,5 @@ function vmeng_social() {
 	get_template_part('inc/social');
 }
 //plugins
-foreach( glob( get_template_directory() . '/lib/plugins/plugins-*.php' ) as $file_path )
+foreach( glob( get_template_directory() . '/lib/plugins/plugin-*.php' ) as $file_path )
     include( $file_path );
