@@ -1,22 +1,24 @@
 <?php
 add_action('wp_footer', 'ajax_comment_script');
-  function ajax_comment_script() {
-	  if ( is_singular() ) {
-    	$ajaxcomment = json_encode(array(
-            'ajax_url'   => admin_url('admin-ajax.php'),
+function ajax_comment_script()
+{
+    if (is_singular()) {
+        $ajaxcomment = json_encode(array(
+            'ajax_url' => admin_url('admin-ajax.php'),
             'order' => get_option('comment_order'),
             'formpostion' => 'bottom', //默认为bottom，如果你的表单在顶部则设置为top。
-        ));  
-		echo '<script type=\'text/javascript\' data-no-instant>',"\n",' var ajaxcomment = ',$ajaxcomment,';',"\n",'</script>',"\n";
-    	echo '<script type="text/javascript" src="',get_template_directory_uri(),'/js/ajax-comment.js" data-no-instant></script>',"\n";
-  }else{
-		  return;
-	  }
+        ));
+        echo '<script type=\'text/javascript\' data-no-instant>', "\n", ' var ajaxcomment = ', $ajaxcomment, ';', "\n", '</script>', "\n";
+        echo '<script type="text/javascript" src="', get_template_directory_uri(), '/js/ajax-comment.js" data-no-instant></script>', "\n";
+    } else {
+        return;
+    }
 }
 add_action('wp_footer', 'ias_script');
-  function ias_script() {
-	    if (is_home() || is_archive() || is_search()) {
-            echo "<script type=\"text/javascript\" data-no-instant>
+function ias_script()
+{
+    if (is_home() || is_archive() || is_search()) {
+        echo "<script type=\"text/javascript\" data-no-instant>
      var ias = $.ias({
 	    container: \".site-main\",
      	item: \".thumbnail\",
@@ -37,32 +39,33 @@ add_action('wp_footer', 'ias_script');
             });
     })
     </script>\n";
-		}else{
-			return;
-		}
-  }
+    } else {
+        return;
+    }
+}
 add_action('wp_footer', 'rewards_script');
-  function rewards_script() {
-	  if( (is_single() && vm_get_option('rewards_s')) && ( vm_get_option('rewards_alipay') || vm_get_option('rewards_wechat') ) ){
-		  echo "<div class=\"rewards-popover-mask\" data-event=\"rewards-close\"></div>
+function rewards_script()
+{
+    if ((is_single() && vm_get_option('rewards_s')) && (vm_get_option('rewards_alipay') || vm_get_option('rewards_wechat'))) {
+        echo "<div class=\"rewards-popover-mask\" data-event=\"rewards-close\"></div>
     <div class=\"rewards-popover\">
         <div class=\"rewards-popover-logo\">
-        <img style=\"height:100%\" src=\"",vm_get_option('rewards_logo_src'),"\">
+        <img style=\"height:100%\" src=\"", vm_get_option('rewards_logo_src'), "\">
         </div>
-        <p>", vm_get_option('rewards_slogan') ,"</p>";
-           if( vm_get_option('rewards_alipay') ){ 
+        <p>", vm_get_option('rewards_slogan'), "</p>";
+        if (vm_get_option('rewards_alipay')) {
             echo '<div class="rewards-popover-item">
-            <img src="', vm_get_option('rewards_alipay') ,'">
+            <img src="', vm_get_option('rewards_alipay'), '">
             <h4>支付宝打赏</h4>
             </div>';
-         } 
-        if( vm_get_option('rewards_wechat') ){ 
-           echo '<div class="rewards-popover-item">
-            <img src="',vm_get_option('rewards_wechat'),'">
+        }
+        if (vm_get_option('rewards_wechat')) {
+            echo '<div class="rewards-popover-item">
+            <img src="', vm_get_option('rewards_wechat'), '">
             <h4>微信打赏</h4>
             </div>';
-            } 
-       echo "<h3>", vm_get_option('rewards_title') ,"</h3>
+        }
+        echo "<h3>", vm_get_option('rewards_title'), "</h3>
         <span class=\"rewards-popover-close\" data-event=\"rewards-close\"><i class=\"fa fa-close\"></i></span>
     </div>
 
@@ -90,7 +93,7 @@ $.fn.postLike = function() {
             um_id: id,
             um_action: action
         };
-    $.post(\"", admin_url( 'admin-ajax.php' ),"\", ajax_data,
+    $.post(\"", admin_url('admin-ajax.php'), "\", ajax_data,
         function(data) {
             $(rateHolder).html(data);
         }
@@ -104,8 +107,7 @@ $(document).on(\"click\", \".favorite\",
     }
 );
 </script>\n";
-	  }else{
-		  return;
-	  }
-  }
-?>
+    } else {
+        return;
+    }
+}

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();?>
 <div class="row">
     <div class="col-sm-12 col-md-12">
         <div class="panel panel-default">
@@ -8,10 +8,10 @@
                 </div>
                 <div class="err-button back">
                     <a id="golast" href=javascript:history.go(-1);>返回上一页</a>
-                    <a id="gohome" href="<?php bloginfo('url');?>">返回到主页</a>  
+                    <a id="gohome" href="<?php bloginfo('url');?>">返回到主页</a>
                 </div>
             </section>
         </div>
     </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();?>

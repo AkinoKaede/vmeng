@@ -1,7 +1,7 @@
 </div>
     <footer class="vm-footer">
     <div class="vm-footer-info">
-            <ul class="vm-footer-menu">			    
+            <ul class="vm-footer-menu">
                 <li><a class="vm-a"><i class="fa fa-weixin" rel="nofollow"></i> <?php echo vm_get_option('wechat_name'); ?></a>
                 </li>
 				<li><a class="vm-a" target="_blank" href="<?php echo vm_get_option('qq_url'); ?>" rel="nofollow"><i class="fa fa-qq"></i></a>
@@ -22,7 +22,7 @@
             <img class="refresh" src="<?php echo get_template_directory_uri(); ?>/img/refresh.png" alt="">
         </a>
     </div>
-            <div> Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?><?php echo '  '; ?><?php echo get_option( 'zh_cn_l10n_icp_num' );?> 
+            <div> Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name');?><?php echo '  '; ?><?php echo get_option('zh_cn_l10n_icp_num'); ?>
             </div>
             Theme Vmeng by &bull; <a class="vm-a" target="_blank" href="https://iknet.top" rel="nofollow">秋のかえで</a> &amp; <a class="vm-a" target="_blank" href="https://www.wang233.com" rel="nofollow">wang233</a>
         </div>
@@ -31,22 +31,22 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lazyload.js" ></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/theia-sticky-sidebar.js"></script>
-    <?php if ( is_singular() ) { ?>
+    <?php if (is_singular()) {?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/lib/OwO/OwO.min.js" data-no-instant></script>
-    <?php } ?>
-    <?php if (is_home() && vm_get_option('slider_n') !== '0') { ?>
+    <?php }?>
+    <?php if (is_home() && vm_get_option('slider_n') !== '0') {?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/responsiveslides.min.js" data-no-instant></script>
-    <?php } ?>
+    <?php }?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js" async='async'></script>
-	<?php if ( is_singular() ) { ?>
+	<?php if (is_singular()) {?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fancybox.js" data-no-instant></script>
-    <?php if(vm_get_option('highlight')) { ?>
+    <?php if (vm_get_option('highlight')) {?>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/prism.js" async='async' data-no-instant></script>
-	<?php 
-	}} ?>
+	<?php
+}}?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ias.min.js"></script>
-<?php wp_footer(); ?>
-	<?php if(vm_get_option('instantclick')) { ?>
+<?php wp_footer();?>
+	<?php if (vm_get_option('instantclick')) {?>
     <script src="<?php echo get_template_directory_uri(); ?>/js/instantclick.min.js" data-instant-track></script>
     <script data-instant-track>
     InstantClick.on('change', function(isInitialLoad) {
@@ -71,7 +71,7 @@
 }});
 InstantClick.init();
 </script>
-    <?php } ?>
+    <?php }?>
 
 </body>
 

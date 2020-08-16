@@ -1,34 +1,34 @@
-<?php 
+<?php
 // http://zhangge.net/
 
-$t_url = preg_replace('/^url=(.*)$/i','$1',$_SERVER["QUERY_STRING"]);
-if(!empty($t_url)) {
-	preg_match('/(http|https):\/\//',$t_url,$matches);
-	if($matches){
-		$url=$t_url;
-		$title='页面加载中,请稍候...';
-	} else {
-		$title='加载中...';
-		echo "<script>setTimeout(function(){window.opener=null;window.close();}, 3000);</script>";
-	}
+$t_url = preg_replace('/^url=(.*)$/i', '$1', $_SERVER["QUERY_STRING"]);
+if (!empty($t_url)) {
+    preg_match('/(http|https):\/\//', $t_url, $matches);
+    if ($matches) {
+        $url = $t_url;
+        $title = '页面加载中,请稍候...';
+    } else {
+        $title = '加载中...';
+        echo "<script>setTimeout(function(){window.opener=null;window.close();}, 3000);</script>";
+    }
 }
 //防止 WordPress 遭受恶意 URL 请求。From：http://blog.wpjam.com/m/block-bad-queries/
-if(strlen($_SERVER['REQUEST_URI']) > 384 ||
+if (strlen($_SERVER['REQUEST_URI']) > 384 ||
     strpos($_SERVER['REQUEST_URI'], "eval(") ||
-	strpos($_SERVER['REQUEST_URI'], "base64")) {
-		@header("HTTP/1.1 414 Request-URI Too Long");
-		@header("Status: 414 Request-URI Too Long");
-		@header("Connection: Close");
-		@exit;
+    strpos($_SERVER['REQUEST_URI'], "base64")) {
+    @header("HTTP/1.1 414 Request-URI Too Long");
+    @header("Status: 414 Request-URI Too Long");
+    @header("Connection: Close");
+    @exit;
 }
 ?>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="1;url='<?php echo $url;?>';">
-<meta name="robots" content="noindex, nofollow" />  
-<title><?php echo $title;?></title>
+<meta http-equiv="refresh" content="1;url='<?php echo $url; ?>';">
+<meta name="robots" content="noindex, nofollow" />
+<title><?php echo $title; ?></title>
 <!--加载效果代码来自Emlog-->
 <style>
 #loader-wrapper {
