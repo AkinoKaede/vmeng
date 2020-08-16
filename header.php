@@ -25,7 +25,7 @@
 
 <body>
 <?php if (is_singular()) {?>
-    <link href="<?php echo get_template_directory_uri(); ?>/css/fancybox.css" rel="stylesheet" type="text/css" data-no-instant />
+    <link href="<?php echo get_template_directory_uri(); ?>/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" data-no-instant />
 	<link href="<?php echo get_template_directory_uri(); ?>/lib/OwO/OwO.min.css" rel="stylesheet" type="text/css" data-no-instant />
 	<?php if (vm_get_option('highlight')) {?>
 	    <link href="<?php echo get_template_directory_uri(); ?>/css/prism.css" rel="stylesheet" type="text/css" data-no-instant />

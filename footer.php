@@ -39,7 +39,7 @@
     <?php }?>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js" async='async'></script>
 	<?php if (is_singular()) {?>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fancybox.js" data-no-instant></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.min.js" data-no-instant></script>
     <?php if (vm_get_option('highlight')) {?>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/prism.js" async='async' data-no-instant></script>
 	<?php
