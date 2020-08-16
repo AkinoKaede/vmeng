@@ -2,9 +2,8 @@
 轻快简的WordPress博客风主题,基于BootStarp框架,InstantClick让主题加载更为迅速。二次开发自[VicTheme](https://github.com/imvicchen/victheme-Wordpress-Theme)(已得授权)!  
 本项目无文档，无注释，不再维护(其实两年前就没有维护了，如果有提交PR咱倒是可以看看)!  
 推荐搭配[WP-PostViews for Vmeng](https://github.com/AkinoMaple/wp-postviews)使用  
-如果有兴趣，可以加入我的[Telegram 群组](https://t.me/joinchat/ICH37BYpuUcKRHjytfVWTw)，不过这个群不讨论WordPress，只摸鱼吹水，主题有问题千万别问我!  
-  
 本项目代码不精，架构松散，封装无力? 别着急，请接下去看  
+
 ## かえでの言葉
 我，秋のかえで， ~事JK~，INTP-T人格，什么都不会的Developer……  
 这款主题主题是我初二的时候和我的朋友写的，大部分算是我完成的吧，那段时光并不是很快乐，就不多回忆了。其实一直想把它开源，但是觉得写的太烂了，不敢开源……当时，其实我并不太懂开发，基本算是东拼西凑得来的，不过却给我带来了极大的影响。  
