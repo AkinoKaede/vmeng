@@ -1,11 +1,6 @@
 <?php
-/*
-  ServerChan评论提醒-狂放
-  https://www.iknet.top/550.html
- */
-//评论微信推送  
-function kfang_serverchan_send($comment_id)  
-{
+
+function vmeng_serverchan_send($comment_id) {
 $comment = get_comment($comment_id);    
 $text = ($comment->comment_author).'在'.get_option("blogname").'的文章《'.get_the_title($comment->comment_post_ID).'》 上评论';
 $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
@@ -42,4 +37,4 @@ array(
 $context = stream_context_create($opts);  
 return $result = file_get_contents('https://sc.ftqq.com/'.$key.'.send', false, $context);  
 }  
-add_action('comment_post', 'kfang_serverchan_send', 19, 2);  
+add_action('comment_post', 'vmeng_serverchan_send', 19, 2);  

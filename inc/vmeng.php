@@ -411,8 +411,7 @@ function vmeng_add_tinymce_button( $plugin_array ) {
 	return $plugin_array;
 }
 
-//添加编辑器快捷按钮
-
+// 添加编辑器快捷按钮
 function my_quicktags() {
     global $pagenow;
     if( $pagenow == 'post-new.php' || $pagenow == 'post.php' ){
@@ -433,16 +432,18 @@ function vmeng_collapse($atts, $content = null){
 	</div>';
 }
 add_shortcode('collapse', 'vmeng_collapse');
-//维护模式
+
+// 维护模式
 function wp_maintenance_mode(){
     if(!current_user_can('edit_themes') || !is_user_logged_in()){
         wp_die('<div style="text-align:center"><img src="'.get_template_directory_uri().'/img/logo.png" /><br/>'.get_bloginfo('name').'正在维护中……</div>', get_bloginfo('name').'正在维护中……',array('response' => '503'));
     }
 }
 if(vm_get_option('maintenance_mode')){
-add_action('get_header', 'wp_maintenance_mode');
+    add_action('get_header', 'wp_maintenance_mode');
 }
-//归档
+
+// 归档
  function vmeng_archives_list() {
      if( !$output = get_option('vmeng_archives_list') ){
          $output = '<div id="archives"><p> <em>注: 点击月份可以展开</em></p>';
