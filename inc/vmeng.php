@@ -146,7 +146,7 @@ function time_ago($time_type)
     }
 }
 
-//注册说说类型文章
+// 注册说说类型文章
 add_action('init', 'my_custom_init');
 function my_custom_init()
 {$labels = array('name' => '说说',
@@ -750,6 +750,7 @@ function code($atts, $content = null)
     $return .= '</code></pre>';
     return $return;
 }
+
 // 图片alt
 function image_alt($c)
 {
@@ -784,14 +785,17 @@ if (vm_get_option('lazy_a')) {
         return $content;
     }
 }
+
 //登录自定义
 function custom_login()
 {
-    echo '<link rel="stylesheet" tyssspe="text/css" href="' . get_bloginfo('template_directory') . '/css/custom_login.css" />';}
+    echo '<link rel="stylesheet" tyssspe="text/css" href="' . get_bloginfo('template_directory') . '/css/custom_login.css" />';
+}
 add_action('login_head', 'custom_login');
+
 //点赞
-add_action('wp_ajax_nopriv_thumbups', 'thumbups'); //校验未登录用户是否点赞
-add_action('wp_ajax_thumbups', 'thumbups'); //校验登录用户是否点赞
+add_action('wp_ajax_nopriv_thumbups', 'thumbups'); // 校验未登录用户是否点赞
+add_action('wp_ajax_thumbups', 'thumbups'); // 校验登录用户是否点赞
 function thumbups()
 {
     global $wpdb, $post;

@@ -246,7 +246,7 @@ function optionsframework_options() {
 		'type' => 'checkbox'
 	);
 	
-		// 基本设置
+	// 基本设置
 
 	$options[] = array(
 		'name' => '基本设置',

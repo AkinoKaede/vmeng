@@ -7,16 +7,16 @@ jQuery(document).ready(function(jQuery) {
 			url: ajaxcomment.ajax_url,
 			data: jQuery(this).serialize() + "&action=ajax_comment",
 			type: jQuery(this).attr('method'),
-			beforeSend: addComment.createButterbar("提交中...."),
+			beforeSend: faAjax.createButterbar("提交中...."),
 			error: function(request) {
-				var t = addComment;
+				var t = faAjax;
 				t.createButterbar(request.responseText);
 			},
 			success: function(data) {
 				jQuery('textarea').each(function() {
 					this.value = ''
 				});
-				var t = addComment,
+				var t = faAjax,
 					cancel = t.I('cancel-comment-reply-link'),
 					temp = t.I('wp-temp-form-div'),
 					respond = t.I(t.respondId),
@@ -26,9 +26,9 @@ jQuery(document).ready(function(jQuery) {
 					jQuery('#respond').before('<ol class="children">' + data + '</ol>');
 				} else if (!jQuery('.' + __list ).length) {
 					if (ajaxcomment.formpostion == 'bottom') {
-						jQuery('#respond').before('<ol class="' + __list + '" style="list-style: none">' + data + '</ol>');
+						jQuery('#respond').before('<ol class="' + __list + '">' + data + '</ol>');
 					} else {
-						jQuery('#respond').after('<ol class="' + __list + '" style="list-style: none">' + data + '</ol>');
+						jQuery('#respond').after('<ol class="' + __list + '">' + data + '</ol>');
 					}
 
 				} else {
@@ -50,45 +50,7 @@ jQuery(document).ready(function(jQuery) {
 		});
 		return false;
 	});
-	addComment = {
-		moveForm: function(commId, parentId, respondId) {
-			var t = this,
-				div, comm = t.I(commId),
-				respond = t.I(respondId),
-				cancel = t.I('cancel-comment-reply-link'),
-				parent = t.I('comment_parent'),
-				post = t.I('comment_post_ID');
-			__cancel.text(__cancel_text);
-			t.respondId = respondId;
-			if (!t.I('wp-temp-form-div')) {
-				div = document.createElement('div');
-				div.id = 'wp-temp-form-div';
-				div.style.display = 'none';
-				respond.parentNode.insertBefore(div, respond)
-			}!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
-			jQuery("body").animate({
-				scrollTop: jQuery('#respond').offset().top - 180
-			}, 400);
-			parent.value = parentId;
-			cancel.style.display = '';
-			cancel.onclick = function() {
-				var t = addComment,
-					temp = t.I('wp-temp-form-div'),
-					respond = t.I(t.respondId);
-				t.I('comment_parent').value = '0';
-				if (temp && respond) {
-					temp.parentNode.insertBefore(respond, temp);
-					temp.parentNode.removeChild(temp);
-				}
-				this.style.display = 'none';
-				this.onclick = null;
-				return false;
-			};
-			try {
-				t.I('comment').focus();
-			} catch (e) {}
-			return false;
-		},
+	faAjax = {
 		I: function(e) {
 			return document.getElementById(e);
 		},
