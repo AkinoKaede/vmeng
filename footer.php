@@ -24,7 +24,7 @@
     </div>
             <div> Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name');?><?php echo '  '; ?><?php echo get_option('zh_cn_l10n_icp_num'); ?>
             </div>
-            Theme <a class="vm-a" target="_blank" href="https://github.com/AkinoMaple/vmeng" rel="nofollow">Vmeng</a> by &bull; <a class="vm-a" target="_blank" href="https://iknet.top" rel="nofollow">秋のかえで</a> &amp; <a class="vm-a" target="_blank" href="https://www.wang233.com" rel="nofollow">wang233</a>
+            Theme <a class="vm-a" target="_blank" href="https://github.com/AkinoKaede/vmeng" rel="nofollow">Vmeng</a> by &bull; <a class="vm-a" target="_blank" href="https://iknet.top" rel="nofollow">秋のかえで</a> &amp; <a class="vm-a" target="_blank" href="https://www.wang233.com" rel="nofollow">wang233</a>
         </div>
     </footer>
 	<a href="#" class="cd-top"></a>
